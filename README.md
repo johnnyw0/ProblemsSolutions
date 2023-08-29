@@ -1,1 +1,1 @@
-Algumas soluções do beecrowd desenvolvidas durante o curso de programação de computadores
+Algumas soluções do beecrowd e provas desenvolvidas durante o curso de programação de computadores
