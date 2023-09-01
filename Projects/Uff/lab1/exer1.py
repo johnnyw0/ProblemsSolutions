@@ -1,0 +1,6 @@
+nome = input("Nome: ")
+idade = input("Idade(apenas números): ")
+altura = input("Altura(cm, apenas números): ")
+peso = input("Peso(kg, apenas números: ")
+nacionalidade = input("Nacionalidade: ")
+print((f'Meu nome é {nome}, eu tenho {idade} anos, meço {altura}cm, peso {peso}kg e sou {nacionalidade}'))

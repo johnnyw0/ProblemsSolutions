@@ -1,0 +1,3 @@
+brasil 7 4 3 14
+franca 5 2 8 15
+argentina 2 0 0 2
