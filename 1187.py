@@ -1,10 +1,10 @@
-matriz = [[0]*12]*12
-
+matriz = []
 O = input()
-
 for i in range(12):
+    linha = []
     for j in range(12):
-        matriz[i][j] = float(input())
+        linha.append(float(input()))
+    matriz.append(linha)
         
 soma = qtd = 0
 
