@@ -2,22 +2,58 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 def plotar_grafico():
-    banda_requisitada = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    banda_requisitada = [10, 31, 53, 74]
     
     # Valores de tempos para cada tipo de intenção
-    fluxo_c1 = [0.913, 0.9155, 0.914, 0.914, 0.913, 0.9135, 0.875, 0.733, 0.708, 0.707]
-    fluxo_c2 = [1, 1.99, 2.73, 2.73, 2.73, 2.73, 2.135, 1.285, 1.15, 1.15]
-    fluxo_c3 = [1, 2, 2.99, 3.99, 4.99, 5.99, 6.99, 7.99, 8.155, 8.15]
+    fluxo_c1 = [1.905655136,
+1.90574363,
+4.442839409,
+2.857978973
+]
+    fluxo_c2 = [0.953390445,
+3.804147871,
+2.815385171,
+0.954973371
+]
+    fluxo_c3 = [2.857176632,
+2.853921575,
+2.263295875,
+5.714486652
+]
 
     # Valores de erros mínimos e máximos para cada tipo de intenção
-    erros_minimos_c1 = [0.912, 0.913, 0.913, 0.912, 0.913, 0.913, 0.874, 0.731, 0.706, 0.704]
-    erros_maximos_c1 = [0.914, 0.918, 0.917, 0.917, 0.915, 0.914, 0.876, 0.736, 0.711, 0.709]
+    erros_minimos_c1 = [1.905147774,
+1.904951542,
+4.290748277,
+2.856826698
+]
+    erros_maximos_c1 = [1.905741722,
+1.906852428,
+4.544348353,
+2.858759055
+]
     
-    erros_minimos_c2 = [0.99, 1.99, 2.72, 2.72, 2.71, 2.71, 2.13, 1.28, 1.14, 1.14]
-    erros_maximos_c2 = [1, 2, 2.73, 2.73, 2.73, 2.73, 2.14, 1.31, 1.16, 1.16]
+    erros_minimos_c2 = [0.953022882,
+3.802401478,
+2.669040659,
+0.953935033
+]
+    erros_maximos_c2 = [0.953722356,
+3.807167634,
+3.049565691,
+0.956649881
+]
     
-    erros_minimos_c3 = [0.99, 1.99, 2.99, 3.99, 4.99, 5.99, 6.99, 7.99, 8.13, 8.13]
-    erros_maximos_c3 = [1, 2, 3, 4, 5, 6, 7, 8, 8.16, 8.16]
+    erros_minimos_c3 = [2.856110255,
+2.851572297,
+2.171673113,
+5.71260673
+]
+    erros_maximos_c3 = [2.857533403,
+2.856721516,
+2.336590577,
+5.716482231
+]
     
     fig = plt.figure(figsize=(6,4))
     ax = fig.gca()
@@ -50,7 +86,7 @@ def plotar_grafico():
         plt.errorbar(banda_requisitada, tempos, yerr=[diferenca_minima, diferenca_maxima], fmt=formas_pontos[i], linestyle=estilos_linha[i], color=cores[i], capsize=5, label=nomes_legenda[i], ecolor=cores[i])
 
     plt.ylabel("Throughput (Mb/s)", fontsize=9)
-    plt.xlabel("Requested Bandwidth (Mb/s)", fontsize=9)
+    plt.xlabel("Time", fontsize=9)
     plt.grid(linestyle='dotted', axis='y')
 
     # Criando os elementos personalizados da legenda
@@ -63,7 +99,7 @@ def plotar_grafico():
         ax.spines[axis].set_linewidth(2)
     
     plt.show()
-    fig.savefig("tcpreplay-com-limitacao.pdf", bbox_inches='tight')
+    fig.savefig("dinamico-com-limitacao.pdf", bbox_inches='tight')
 
 if __name__ == "__main__":
     plotar_grafico()

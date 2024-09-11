@@ -1,23 +1,20 @@
 import pandas as pd
 
-# Carregar a tabela de dados CSV
-# Você pode substituir 'dados.csv' pelo caminho do seu arquivo
-df = pd.read_csv('dados.csv')
+# Carrega o arquivo CSV
+df = pd.read_csv('dinamico-com-limitacao.csv')
 
-# Agrupar os dados por 'fluxo' e 'banda requisitada'
-resultados_agrupados = df.groupby(['fluxo', 'banda_requisitada'])['vazao']
+# Agrupa os dados por 'flow' e 'time'
+grouped = df.groupby(['flow', 'time'])
 
-# Calcular a média, o maior e o menor valor de vazão
-media = resultados_agrupados.mean().reset_index(name='media')
-maior_valor = resultados_agrupados.max().reset_index(name='maior_valor')
-menor_valor = resultados_agrupados.min().reset_index(name='menor_valor')
+# Calcula as estatísticas (média, menor e maior valor)
+statistics = grouped['throughput'].agg(
+    mean_throughput='mean',
+    min_throughput='min',
+    max_throughput='max'
+).reset_index()
 
-# Unir os resultados em um único DataFrame
-resultados = pd.merge(media, maior_valor, on=['fluxo', 'banda_requisitada'])
-resultados = pd.merge(resultados, menor_valor, on=['fluxo', 'banda_requisitada'])
+# Exibe o resultado
+print(statistics)
 
-# Exibir o resultado
-print(resultados)
-
-# Salvar em um novo arquivo CSV, se necessário
-resultados.to_csv('resultados_processados.csv', index=False)
+# Se quiser salvar o resultado em um novo CSV
+statistics.to_csv('dinamico-simultaneo-com-limitacao.csv', index=False)
