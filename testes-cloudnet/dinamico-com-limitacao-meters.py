@@ -5,54 +5,54 @@ def plotar_grafico():
     banda_requisitada = [10, 31, 53, 74]
     
     # Valores de tempos para cada tipo de intenção
-    fluxo_c1 = [1.905655136,
-1.90574363,
-4.442839409,
-2.857978973
+    fluxo_c1 = [1.0513297310252572,
+4.09295553328742,
+3.1667027670593884,
+3.1946974393669936
 ]
-    fluxo_c2 = [0.953390445,
-3.804147871,
-2.815385171,
-0.954973371
+    fluxo_c2 = [2.121277477786591,
+2.1132499143012486,
+3.1865678573239373,
+3.191239137386892
 ]
-    fluxo_c3 = [2.857176632,
-2.853921575,
-2.263295875,
-5.714486652
+    fluxo_c3 = [3.177275864550209,
+3.1752499897143496,
+3.1677496408133665,
+3.132905555776525
 ]
 
     # Valores de erros mínimos e máximos para cada tipo de intenção
-    erros_minimos_c1 = [1.905147774,
-1.904951542,
-4.290748277,
-2.856826698
+    erros_minimos_c1 = [1.0419328392333913,
+4.05520925719092,
+3.099195309723467,
+3.114397096383923
 ]
-    erros_maximos_c1 = [1.905741722,
-1.906852428,
-4.544348353,
-2.858759055
-]
-    
-    erros_minimos_c2 = [0.953022882,
-3.802401478,
-2.669040659,
-0.953935033
-]
-    erros_maximos_c2 = [0.953722356,
-3.807167634,
-3.049565691,
-0.956649881
+    erros_maximos_c1 = [1.059886962947198,
+4.132549902021414,
+3.210494551440682,
+3.210347058790188
 ]
     
-    erros_minimos_c3 = [2.856110255,
-2.851572297,
-2.171673113,
-5.71260673
+    erros_minimos_c2 = [2.109895149794681,
+2.0863042743202653,
+3.103062931810324,
+3.1050035349587084
 ]
-    erros_maximos_c3 = [2.857533403,
-2.856721516,
-2.336590577,
-5.716482231
+    erros_maximos_c2 = [2.137689733866948,
+2.1263138562569703,
+3.210597136848724,
+3.2244241285727497
+]
+    
+    erros_minimos_c3 = [3.153422318339703,
+3.147285392481978,
+3.1045155467017373,
+3.102514735985032
+]
+    erros_maximos_c3 = [3.209959778277881,
+3.1946680398766816,
+3.210080520953127,
+3.212095410672448
 ]
     
     fig = plt.figure(figsize=(6,4))
@@ -88,6 +88,7 @@ def plotar_grafico():
     plt.ylabel("Throughput (Mb/s)", fontsize=9)
     plt.xlabel("Time", fontsize=9)
     plt.grid(linestyle='dotted', axis='y')
+
     plt.yticks([1, 2, 3, 4, 5, 6, 7, 8])
     # Criando os elementos personalizados da legenda
     plt.legend(handles, nomes_legenda, loc='best', fontsize=8)
@@ -99,7 +100,7 @@ def plotar_grafico():
         ax.spines[axis].set_linewidth(2)
     
     plt.show()
-    fig.savefig("dinamico-com-limitacao.pdf", bbox_inches='tight')
+    fig.savefig("dinamico-com-limitacao-ONOS.pdf", bbox_inches='tight')
 
 if __name__ == "__main__":
     plotar_grafico()
