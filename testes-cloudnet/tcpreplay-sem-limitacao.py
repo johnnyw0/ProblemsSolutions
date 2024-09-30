@@ -53,6 +53,7 @@ def plotar_grafico():
     plt.xlabel("Requested Bandwidth (Mb/s)", fontsize=9)
     plt.grid(linestyle='dotted', axis='y')
 
+    plt.yticks([1, 2, 3, 4, 5, 6, 7, 8])
     # Criando os elementos personalizados da legenda
     plt.legend(handles, nomes_legenda, loc='best', fontsize=8)
 
