@@ -85,8 +85,8 @@ def plotar_grafico():
         handles.append(Line2D([], [], color=cores[i], marker=formas_pontos[i], markersize=10, linestyle=estilos_linha[i]))
         plt.errorbar(banda_requisitada, tempos, yerr=[diferenca_minima, diferenca_maxima], fmt=formas_pontos[i], linestyle=estilos_linha[i], color=cores[i], capsize=5, label=nomes_legenda[i], ecolor=cores[i])
 
-    plt.ylabel("Throughput (Mb/s)", fontsize=9)
-    plt.xlabel("Time", fontsize=9)
+    plt.ylabel("Vazão (Mb/s)", fontsize=9)
+    plt.xlabel("Tempo", fontsize=9)
     plt.grid(linestyle='dotted', axis='y')
     plt.yticks([1, 2, 3, 4, 5, 6, 7, 8])
     # Criando os elementos personalizados da legenda
