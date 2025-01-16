@@ -139,14 +139,14 @@ def plotar_grafico():
         handles.append(Line2D([], [], color=cores[i], marker=formas_pontos[i], markersize=10, linestyle=estilos_linha[i]))
         plt.errorbar(banda_requisitada, tempos, yerr=[diferenca_minima, diferenca_maxima], fmt=formas_pontos[i], linestyle=estilos_linha[i], color=cores[i], capsize=5, label=nomes_legenda[i], ecolor=cores[i])
 
-    plt.ylabel("Throughput (Mb/s)", fontsize=9)
-    plt.xlabel("Requested Bandwidth (Mb/s)", fontsize=9)
+    plt.ylabel("Vazão (Mb/s)", fontsize=14)
+    plt.xlabel("Banda Requisitada (Mb/s)", fontsize=15)
     plt.grid(linestyle='dotted', axis='y')
-
+    plt.yticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     # Criando os elementos personalizados da legenda
-    plt.legend(handles, nomes_legenda, loc='best', fontsize=8)
+    plt.legend(handles, nomes_legenda, loc='upper left', fontsize=13)
 
-    plt.tick_params(labelsize=8)
+    plt.tick_params(labelsize=12)
     plt.subplots_adjust(left=0.2, bottom=0.18, right=0.9, top=0.888, wspace=0.2, hspace=0.2)
 
     for axis in ['top','bottom','left','right']:
