@@ -19,7 +19,7 @@ plt.plot(timestamps, cpu_usage, label="Uso de CPU (%)", color='r')
 plt.plot(timestamps, memory_usage, label="Uso de Memória (%)", color='b')
 
 # Configurar os eixos
-plt.ylim(0, 20)  # Configurar o eixo Y de 0 a 100
+plt.ylim(0, 15)  # Configurar o eixo Y de 0 a 100
 plt.xlabel("Tempo (s)", fontsize=18)
 plt.ylabel("Uso (%)", fontsize=18)
 
