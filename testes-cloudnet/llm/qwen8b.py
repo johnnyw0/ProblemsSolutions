@@ -27,7 +27,7 @@ plt.ylabel("Uso (%)", fontsize=18)
 
 plt.tick_params(labelsize=18)
 plt.subplots_adjust(left=0.125, bottom=0.18, right=0.9, top=0.888, wspace=0.2, hspace=0.2)
-plt.legend(loc='upper center',fontsize=14)
+#plt.legend(loc='upper center',fontsize=14)
 
 ax = plt.gca()
 for axis in ['top','bottom','left','right']:
