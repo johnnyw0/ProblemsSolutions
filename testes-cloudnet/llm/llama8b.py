@@ -15,13 +15,13 @@ memory_usage = [item["uso_memoria (%)"] for item in data]
 
 # Plotar os dados
 plt.figure(figsize=(5, 4))  # Aumentei o tamanho do gráfico
-plt.plot(timestamps, cpu_usage, label="Uso de CPU (%)", color='r')
-plt.plot(timestamps, memory_usage, label="Uso de Memória (%)", color='b')
+plt.plot(timestamps, cpu_usage, label="CPU Usage (%)", color='r')
+plt.plot(timestamps, memory_usage, label="Memory Usage (%)", color='b')
 
 # Configurar os eixos
 plt.ylim(0, 15)  # Configurar o eixo Y de 0 a 100
-plt.xlabel("Tempo (s)", fontsize=18)
-plt.ylabel("Uso (%)", fontsize=18)
+plt.xlabel("Time (s)", fontsize=18)
+plt.ylabel("Usage (%)", fontsize=18)
 
 
 
@@ -40,7 +40,7 @@ plt.subplots_adjust(left=0.2)
 plt.grid(True)
 # Caminho onde o PDF será salvo
 
-output_path = r"C:\Users\johnn\Documents\GitHub\testesllm\llama\llama8b.pdf"
+output_path = r"C:\Users\johnn\Documents\GitHub\testesllm\llama\llama8b_ingles.pdf"
 
 # Salvar o gráfico em PDF
 plt.savefig(output_path, format='pdf')
